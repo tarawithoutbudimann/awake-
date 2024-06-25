@@ -3,4 +3,12 @@
     <string name="title_home">Home</string>
     <string name="title_profile">Profile</string>
     <string name="title_notifications">Notifications</string>
+    <string name="rest_area">Rest Area</string>
+    <string name="alert_level">Alert Level</string>
+    <string name="guide">Guide</string>
+    <string name="street">Condition</string>
+    <string name="settings">Settings</string>
+    <string name="fakta_unik">Fakta Unik</string>
+    <string name="history">History</string>
+    <string name="dashboard">Dashboard</string>
 </resources>
