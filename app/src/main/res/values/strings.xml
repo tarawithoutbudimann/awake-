@@ -11,4 +11,7 @@
     <string name="fakta_unik">Fakta Unik</string>
     <string name="history">History</string>
     <string name="dashboard">Dashboard</string>
+    <string name="title_activity_rest_area_search">RestAreaSearch</string>
+    <string name="tab_text_1">Semua</string>
+    <string name="tab_text_2">Terdekat</string>
 </resources>
