@@ -1,17 +1,20 @@
 package com.example.awakemeneh.ui.restarea
 
-import com.example.awakemeneh.ui.adapter.RestAdapter
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.awakemeneh.R
 import com.example.awakemeneh.databinding.ActivityRestAreaSearchBinding
+import com.example.awakemeneh.ui.adapter.RestAdapter
 import com.example.awakemeneh.ui.data.RestArea
 
 class RestAreaSearch : AppCompatActivity() {
 
     private lateinit var binding: ActivityRestAreaSearchBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRestAreaSearchBinding.inflate(layoutInflater)
@@ -30,5 +33,12 @@ class RestAreaSearch : AppCompatActivity() {
 
         val cardAdapter = RestAdapter(cardList1)
         recyclerView.adapter = cardAdapter
+
+        // Set click listener for back icon
+        val backIcon = binding.root.findViewById<ImageView>(R.id.backIcon)
+        backIcon.setOnClickListener {
+            // Finish the current activity and go back to the previous one
+            finish()
+        }
     }
 }
