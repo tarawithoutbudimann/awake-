@@ -1,6 +1,6 @@
 package com.example.awakemeneh.ui.restarea
 
-import RestAdapter
+import com.example.awakemeneh.ui.adapter.RestAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
