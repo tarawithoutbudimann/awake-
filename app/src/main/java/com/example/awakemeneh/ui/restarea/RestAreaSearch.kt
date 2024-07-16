@@ -1,8 +1,8 @@
 package com.example.awakemeneh.ui.restarea
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +10,8 @@ import com.example.awakemeneh.R
 import com.example.awakemeneh.databinding.ActivityRestAreaSearchBinding
 import com.example.awakemeneh.ui.adapter.RestAdapter
 import com.example.awakemeneh.ui.data.RestArea
+import android.widget.ImageView
+import com.example.awakemeneh.ui.home.HomeFragment
 
 class RestAreaSearch : AppCompatActivity() {
 
@@ -31,7 +33,7 @@ class RestAreaSearch : AppCompatActivity() {
             RestArea(R.drawable.restarea, "Rest Area 09", "Someplace", "1234567890")
         )
 
-        val cardAdapter = RestAdapter(cardList1)
+        val cardAdapter = RestAdapter(cardList1, this)
         recyclerView.adapter = cardAdapter
 
         // Set click listener for back icon
@@ -40,5 +42,14 @@ class RestAreaSearch : AppCompatActivity() {
             // Finish the current activity and go back to the previous one
             finish()
         }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+        // Handle back press to go to Home fragment
+        val intent = Intent(this, HomeFragment::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+        finish()
     }
 }
