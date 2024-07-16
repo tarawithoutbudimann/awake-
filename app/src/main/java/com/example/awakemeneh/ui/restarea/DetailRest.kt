@@ -25,7 +25,6 @@ class DetailRest : AppCompatActivity() {
         nameArea.text = name
         coordinates.text = coords
         addressArea.text = address
-
         // Set click listener for back icon
         backIcondetail.setOnClickListener {
             // Start RestAreaSearch activity with FLAG_ACTIVITY_CLEAR_TOP
