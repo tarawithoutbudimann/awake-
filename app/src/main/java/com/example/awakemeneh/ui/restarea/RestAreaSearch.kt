@@ -1,6 +1,5 @@
 package com.example.awakemeneh.ui.restarea
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -31,7 +30,7 @@ class RestAreaSearch : AppCompatActivity() {
             RestArea(R.drawable.restarea, "Rest Area 09", "Someplace", "1234567890")
         )
 
-        val cardAdapter = RestAdapter(cardList1)
+        val cardAdapter = RestAdapter(cardList1, this)
         recyclerView.adapter = cardAdapter
 
         // Set click listener for back icon
