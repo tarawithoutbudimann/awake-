@@ -16,6 +16,7 @@ import com.example.awakemeneh.databinding.FragmentHomeBinding
 import com.example.awakemeneh.ui.adapter.CardAdapter
 import com.example.awakemeneh.ui.adapter.SliderAdapter
 import com.example.awakemeneh.ui.data.Card
+import com.example.awakemeneh.ui.livecam.CameraLive
 import com.example.awakemeneh.ui.restarea.RestAreaSearch
 
 class HomeFragment : Fragment() {
@@ -33,8 +34,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -65,14 +65,19 @@ class HomeFragment : Fragment() {
         cardAdapter = CardAdapter(cardList)
         recyclerView.adapter = cardAdapter
 
-        // Set click listener for restareaicon
         val restAreaIcon = binding.root.findViewById<ImageView>(R.id.restareaicon)
         restAreaIcon.setOnClickListener {
             // Perform action on click
             val intent = Intent(activity, RestAreaSearch::class.java)
             startActivity(intent)
         }
-
+        // Set click listener for live camera
+        val livecamicon = binding.root.findViewById<ImageView>(R.id.livecamicon)
+        livecamicon.setOnClickListener {
+            // Perform action on click
+            val intent = Intent(activity, CameraLive::class.java)
+            startActivity(intent)
+        }
         return root
     }
 

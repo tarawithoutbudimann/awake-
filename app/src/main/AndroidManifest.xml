@@ -2,45 +2,69 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logosplash"
-        android:label="@string/app_name"
+        android:label="Awake"
         android:roundIcon="@drawable/logosplash"
         android:supportsRtl="true"
         android:theme="@style/Theme.Awakemeneh"
         tools:targetApi="31">
-
-        <activity android:name=".ui.restarea.DetailRest" />
-
         <activity
-            android:name=".ui.restarea.RestAreaSearch"
-            android:exported="false"
-            android:label="@string/title_activity_rest_area_search"
-            android:theme="@style/Theme.Awakemeneh.NoActionBar" />
-        <activity
-            android:name=".ui.autentikasi.Register"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".ui.livecam.CameraLive"
             android:exported="true"
-            android:label="@string/app_name">
-            <intent-filter>
+            android:theme="@style/Theme.Awakemeneh.NoActionBar"/>
+        <activity
+            android:name=".ui.onboarding.MainOnBoarding"
+            android:exported="true">
+            <intent-filter tools:ignore="ExtraText">
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
 
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR API KEY"/>
+            android:value="YOUR_API_KEY" />
+
+        <activity
+            android:name=".ui.street.StreetCondi"
+            android:exported="true"
+            android:label="@string/title_activity_street_condi" />
+        <activity
+            android:name=".ui.restarea.RestAreaSearch"
+            android:exported="true"
+            android:label="@string/title_activity_rest_area_search"
+            android:theme="@style/Theme.Awakemeneh.NoActionBar" />
+        <activity
+            android:name=".ui.autentikasi.Register"
+            android:exported="true" />
+        <activity
+            android:name=".ui.restarea.DetailRest"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>
