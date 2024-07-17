@@ -15,6 +15,7 @@ import com.example.awakemeneh.R
 import com.example.awakemeneh.databinding.FragmentHomeBinding
 import com.example.awakemeneh.ui.adapter.CardAdapter
 import com.example.awakemeneh.ui.adapter.SliderAdapter
+import com.example.awakemeneh.ui.alertlevel.AlertLevel
 import com.example.awakemeneh.ui.data.Card
 import com.example.awakemeneh.ui.livecam.CameraLive
 import com.example.awakemeneh.ui.restarea.RestAreaSearch
@@ -69,6 +70,12 @@ class HomeFragment : Fragment() {
         restAreaIcon.setOnClickListener {
             // Perform action on click
             val intent = Intent(activity, RestAreaSearch::class.java)
+            startActivity(intent)
+        }// Set click listener for live camera
+        val alertlebel = binding.root.findViewById<ImageView>(R.id.alertlebelicon)
+        alertlebel.setOnClickListener {
+            // Perform action on click
+            val intent = Intent(activity, AlertLevel::class.java)
             startActivity(intent)
         }
         // Set click listener for live camera

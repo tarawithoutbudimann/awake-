@@ -20,9 +20,13 @@
         android:theme="@style/Theme.Awakemeneh"
         tools:targetApi="31">
         <activity
+            android:name=".ui.alertlevel.AlertLevel"
+            android:exported="false"
+            android:theme="@style/Theme.Awakemeneh.NoActionBar"/>
+        <activity
             android:name=".ui.livecam.CameraLive"
             android:exported="true"
-            android:theme="@style/Theme.Awakemeneh.NoActionBar"/>
+            android:theme="@style/Theme.Awakemeneh.NoActionBar" />
         <activity
             android:name=".ui.onboarding.MainOnBoarding"
             android:exported="true">
@@ -64,7 +68,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>
