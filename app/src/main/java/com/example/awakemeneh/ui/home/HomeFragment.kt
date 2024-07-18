@@ -59,9 +59,9 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         val cardList = listOf(
-            Card(R.drawable.banner1, "Berita Terkini", "Tol Gelanggang UGM", "5.0 ★★★★★ (58 Reviews)", "2.5 km/40min", "Hospital"),
-            Card(R.drawable.banner2, "Berita Terkini", "Jembatan Janti", "4.9 ★★★★★ (8 Reviews)", "2.5 km/40min", "Clinic"),
-            Card(R.drawable.banner3, "Berita Terkini", "Universitas Gudang Mantu", "4.9 ★★★★★ (2 Reviews)", "2.5 km/40min", "Clinic")
+            Card(R.drawable.berita1, "Berita Terkini", "Fanny Indah", "25 likes"),
+            Card(R.drawable.berita2, "Berita Terkini", "Fauziah", "50 likes"),
+            Card(R.drawable.berita3, "Berita Terkini", "Dewani Lana", "100 likes")
             // Add more cards as needed
         )
 

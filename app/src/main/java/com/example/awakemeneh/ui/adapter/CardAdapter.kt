@@ -19,10 +19,8 @@ class CardAdapter(private val cardList: List<Card>) : RecyclerView.Adapter<CardA
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val card = cardList[position]
         holder.cardTitle.text = card.title
-        holder.cardAddress.text = card.address
-        holder.cardRating.text = card.rating
-        holder.cardDistanceTime.text = card.distanceTime
-        holder.cardType.text = card.type
+        holder.cardAddress.text = card.penulis
+        holder.cardRating.text = card.like
         holder.cardImage.setImageResource(card.imageResource)
     }
 
@@ -33,7 +31,5 @@ class CardAdapter(private val cardList: List<Card>) : RecyclerView.Adapter<CardA
         val cardTitle: TextView = itemView.findViewById(R.id.card_title)
         val cardAddress: TextView = itemView.findViewById(R.id.card_address)
         val cardRating: TextView = itemView.findViewById(R.id.card_rating)
-        val cardDistanceTime: TextView = itemView.findViewById(R.id.card_distance_time)
-        val cardType: TextView = itemView.findViewById(R.id.card_type)
     }
 }

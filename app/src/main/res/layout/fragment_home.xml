@@ -267,7 +267,10 @@
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/selengkapnyahome"
-                tools:ignore="MissingConstraints"/>
+                tools:ignore="MissingConstraints"
+                android:paddingBottom="100dp"/>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </ScrollView>
