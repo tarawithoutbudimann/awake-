@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.awakemeneh.R
 import com.example.awakemeneh.databinding.ActivityHistoryAwakeBinding
 import com.jjoe64.graphview.GraphView
+import com.jjoe64.graphview.helper.StaticLabelsFormatter
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 
@@ -31,41 +32,38 @@ class HistoryAwake : AppCompatActivity() {
 
         val series = LineGraphSeries(
             arrayOf(
-                // on below line we are adding
-                // each point on our x and y axis.
-                DataPoint(0.0, 1.0),
-                DataPoint(1.0, 3.0),
-                DataPoint(2.0, 4.0),
-                DataPoint(3.0, 9.0),
-                DataPoint(4.0, 6.0),
-                DataPoint(5.0, 3.0),
-                DataPoint(6.0, 6.0),
-                DataPoint(7.0, 1.0),
-                DataPoint(8.0, 2.0)
+                // Adding data points with days of the week as x-values
+                DataPoint(1.0, 2.0), // Monday
+                DataPoint(2.0, 1.0), // Tuesday
+                DataPoint(3.0, 3.0), // Wednesday
+                DataPoint(4.0, 2.0), // Thursday
+                DataPoint(5.0, 4.0), // Friday
+                DataPoint(6.0, 3.0), // Friday
+                DataPoint(7.0, 4.0)  // Sunday
             )
         )
 
-        // on below line adding animation
-        lineGraphView.animate()
+        // Set custom labels for x-axis and y-axis
+        val staticLabelsFormatter = StaticLabelsFormatter(lineGraphView)
+        staticLabelsFormatter.setHorizontalLabels(arrayOf("Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"))
+        staticLabelsFormatter.setVerticalLabels(arrayOf("0","1", "2", "3", "4"))
+        lineGraphView.gridLabelRenderer.labelFormatter = staticLabelsFormatter
 
-        // on below line we are setting scrollable
-        // for point graph view
+        // Set the viewport to show the range of days
+        lineGraphView.viewport.isXAxisBoundsManual = true
+        lineGraphView.viewport.setMinX(1.0)
+        lineGraphView.viewport.setMaxX(7.0)
+
+        // Enable scrolling and scaling
         lineGraphView.viewport.isScrollable = true
-
-        // on below line we are setting scalable.
         lineGraphView.viewport.isScalable = true
-
-        // on below line we are setting scalable y
         lineGraphView.viewport.setScalableY(true)
-
-        // on below line we are setting scrollable y
         lineGraphView.viewport.setScrollableY(true)
 
-        // on below line we are setting color for series.
+        // Set the color for the series
         series.color = R.color.purple_200
 
-        // on below line we are adding
-        // data series to our graph view.
+        // Add the series to the graph view
         lineGraphView.addSeries(series)
     }
 }
