@@ -11,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.awakemeneh.MainActivity
 import com.example.awakemeneh.R
 import com.example.awakemeneh.ui.adapter.OnBoardingAdap
+import com.example.awakemeneh.ui.autentikasi.SignUpActivity
 
 class MainOnBoarding : AppCompatActivity() {
     private lateinit var viewPager: ViewPager2
@@ -80,7 +81,7 @@ class MainOnBoarding : AppCompatActivity() {
 
     private fun finishOnboarding() {
         // Start MainActivity
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, SignUpActivity::class.java)
         startActivity(intent)
         // Finish the onboarding activity so user can't go back to it
         finish()
